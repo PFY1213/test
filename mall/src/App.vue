@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-view/>
+    
+    <router-view></router-view>
+    <home/>
+    <storage/>
   </div>
 </template>
 
 <script>
+import Home from './pages/home.vue'
+import Storage from './storage/index.js'
 
 
 export default {
   name: 'App',
+  data(){
+    return {
+
+    }
+  },
   components: {
-   
+   Home,Storage
+  },
+  mounted(){
+    Storage.setItem('user',{a:1});
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  
 }
 </style>
